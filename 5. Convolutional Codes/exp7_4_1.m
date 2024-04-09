@@ -1,0 +1,10 @@
+clear all
+clc
+G = [1,0,1;1,1,1;1,1,1];
+M = [1 1 0 0 1 0 1 1];
+
+C = conv_code(M,G);
+C_reshape = reshape(C,length(M)+3,3).';
+
+fprintf('输入信息序列：M = %s\n',num2str(M));
+fprintf('(3,1,3)卷积编码：C = %s\n',num2str(C_reshape));
